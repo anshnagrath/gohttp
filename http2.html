@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Http test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+</head>
+<body>
+<div>
+   <p>This request Method is : {{.Method}} </p>
+    <p>Url: {{  .Url}}</p>
+   <p>Headers: </p>
+   {{range $key, $value:= .Header}}
+    {{$key}} 
+    {{ range   $value}}
+    {{.}}
+    {{end}}
+   {{end}}
+   </div>
+   <div>
+    {{if .Submissions}}
+    {{ range .Submissions.fname}}
+    {{.}}
+    
+    {{end}}
+    {{end}}   
+   </div>   
+   <div style="margin-top:5%">
+   <form action="/" method="POST">
+       <input type="text"name="fname" placeholder="first name">
+       <input type="text"name="lname" placeholder="last name">
+       <input type="submit" placeholder="Submit">
+    </form>   
+    </div>
+</body>
+</html>
