@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="main.js"></script>
+</head>
+<body>
+<div> 
+  <form method="POST"> 
+ <p>First Name : <input name="first" type="text"> </p> 
+ <p>last Name : <input name="last"type="text"> </p> 
+ <p>subscribed : <input name="subscribed" type="checkbox"> </p> 
+<input type="submit">
+</form> 
+
+<div style="margin-top: 10%">
+    {{if .FirstName}}
+  <p>First Name :  {{.FirstName}}</p>  
+  <p>Last Name :  {{.LastName}}</p>  
+  <p>Subscribed :  {{.Subscribed}}</p>  
+  {{end}}
+</div>   
+</div>   
+</body>
+</html>   
